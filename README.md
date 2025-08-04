@@ -79,21 +79,17 @@ reflected back into Port 2.
 
 ![Environment](docs/geometry_screenshots/Microstrip_High_Pass_Model.JPG)
 ### Results and Observations
-- **S21 & S12 Overlap**  
-  - The S21 and S12 curves overlapped, confirming the **symmetrical
-nature** of the microstrip filter. 
-- **High-Pass Behavior**  
-  - Sharp cutoff near **1.5 GHz**, matching theory  
-- **Low S11 & S22 in Passband**  
-  - The S11 and S22 plots showed low reflection in the passband,
-indicating efficient power transmission with minimal losses.
 
 ![Results](results/HighPass_filter_Microstrip_Analysis.JPG)
 
-| Parameter | Observation                               |
-|-----------|-------------------------------------------|
-| Cutoff    | ~1.5 GHz                                  |
-| Insertion Loss (S21) | `results/HighPass_filter_Microstrip_Analysis.JPG`
+| Observation             | Result/Interpretation                                                                                       |
+|-------------------------|------------------------------------------------------------------------------------------------------------|
+| **S21 & S12 Overlap**   | The S21 and S12 curves overlapped, confirming the **symmetrical nature** of the microstrip filter.         |
+| **High-Pass Behavior**  | The filter exhibits a **sharp cutoff near 1.5 GHz**, consistent with theoretical predictions.              |
+| **Low S11 & S22 in Passband** | Both S11 and S22 are **low in the passband**, indicating efficient power transmission and minimal reflection losses. |
+
+These results validate the design and simulation, demonstrating that the filter meets key expectations for symmetry, cutoff frequency, and low loss within the operational band.
+
 ### E-Field Animation
 An animation of the E-field distribution at 1.5 GHz illustrates field confinement and stub resonance.  
 `docs/animation/efield_animation.avi`

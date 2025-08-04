@@ -10,7 +10,6 @@ Microstrip-High-Pass-Filter-Simulation/
 │   ├── geometry_screenshots/
 │   │   ├── Microstrip_stricture.png
 │   │   ├── Microstrip_High_Pass_Model.JPG
-│   │   └── EF-field-effect.jpg
 │   └── animation/
 │       └── efield_animation.avi
 ├── hfss_project/

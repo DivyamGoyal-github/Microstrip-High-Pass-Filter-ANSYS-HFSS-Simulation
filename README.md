@@ -37,13 +37,19 @@ etching methods.
 performance.
 
 ### Understanding S-Parameters
-Scattering parameters (S-parameters) quantify how RF energy is reflected and transmitted at network ports:
-- **S11**: Input reflection coefficient (return loss at Port 1)  
-- **S22**: Output reflection coefficient (return loss at Port 2)  
-- **S21**: Forward transmission (gain or insertion loss from Port 1 → Port 2)  
-- **S12**: Reverse transmission (Port 2 → Port 1)  
+Scattering parameters (S-parameters) are a set of complex
+frequency-dependent values that characterize how RF signals behave in a
+multi-port network. They represent how energy is reflected and transmitted
+across ports.
 
-In a well-matched high-pass filter, S21 and S12 overlap and rise above a threshold in the passband, while S11 and S22 remain low, indicating minimal reflections.
+- **S11 (Input Reflection Coefficient):** Measures how much power is
+reflected back into Port 1.
+- **S21 (Forward Transmission Coefficient):** Indicates how much power
+is transmitted from Port 1 to Port 2. 
+- **S12 (Reverse Transmission Coefficient):** Power transmission from
+Port 2 to Port 1.
+- **S22 (Output Reflection Coefficient):** Reflects how much power is
+reflected back into Port 2. 
 
 ### 1. Geometry Creation
 ![Structure](docs/geometry_screenshots/microstrip_stricture.png)
@@ -59,7 +65,7 @@ In a well-matched high-pass filter, S21 and S12 overlap and rise above a thresho
 
 ### 2. Port and Boundary Setup
 - **Lumped Ports**  
-  - Port 1 at the input end; Port 2 at the output end; both renormalized to 50 Ω  
+  - Port 1 at the input end; Port 2 at the output end 
 - **Perfect E Boundaries**  
   - Assigned to all conductor faces to enforce ideal metallic behavior  
 
@@ -67,28 +73,31 @@ In a well-matched high-pass filter, S21 and S12 overlap and rise above a thresho
 - **Open Region**  
   - Surrounding air region to allow free-space radiation  
 - **Frequency Sweep**  
-  - Linear sweep from 1 GHz to 6 GHz (101 points)  
+  - Linear sweep from 1 GHz to 6 GHz 
 - **Solution Setup**  
   - Driven-modal solver at 1.5 GHz, adaptive mesh with maximum ΔS = 0.02
 
 ![Environment](docs/geometry_screenshots/Microstrip_High_Pass_Model.JPG)
 ### Results and Observations
 - **S21 & S12 Overlap**  
-  - Demonstrates symmetric, reciprocal filter response  
+  - The S21 and S12 curves overlapped, confirming the **symmetrical
+nature** of the microstrip filter. 
 - **High-Pass Behavior**  
   - Sharp cutoff near **1.5 GHz**, matching theory  
 - **Low S11 & S22 in Passband**  
-  - Indicates good impedance match and minimal reflection  
+  - The S11 and S22 plots showed low reflection in the passband,
+indicating efficient power transmission with minimal losses.
 
 ![Results](results/HighPass_filter_Microstrip_Analysis.JPG)
 
 | Parameter | Observation                               |
 |-----------|-------------------------------------------|
 | Cutoff    | ~1.5 GHz                                  |
-| Insertion Loss (S21) | `results/HighPass filter Microstrip Analysis.JPG`
+| Insertion Loss (S21) | `results/HighPass_filter_Microstrip_Analysis.JPG`
 ### E-Field Animation
 An animation of the E-field distribution at 1.5 GHz illustrates field confinement and stub resonance.  
 `docs/animation/efield_animation.avi`
+
 
 ## Getting Started
 
@@ -98,8 +107,18 @@ An animation of the E-field distribution at 1.5 GHz illustrates field confinemen
    cd hfss_project
    ```
 2. **Open Project**  
-   - Launch Ansys Electronics Desktop and open `hfss_project/Microstrip_High_Pass_Filter_Divyam.aedt`.
+   - Launch Ansys Electronics Desktop and navigate to `hfss_project/Microstrip_High_Pass_Filter_Divyam.aedt`.  
+   - Ensure all model parameters and material assignments are correct as per the design requirements.
+
 3. **Run Simulation**  
-   - Use the provided Driven-Modal setup; results export to `results/`.
+   - Use the pre-configured Driven-Modal analysis setup for the microstrip high-pass filter.  
+   - Start the simulation, monitoring mesh generation and solver progress for any errors or warnings.  
+   - Upon completion, the simulated data (S-parameters, field distributions, etc.) will be automatically exported to the `results/` directory for further analysis.
+
 4. **View Results**  
-   - Plots under `results/`, screenshots under `docs/geometry_screenshots/`, animation under `docs/animation/`.
+   - **Plots & Reports:**  
+     - Look in the `results/` folder for S-parameter plots (e.g., S11, S21 vs. frequency), which provide insight into filter performance, such as cutoff frequency and insertion loss.  
+   - **Screenshots:**  
+     - Explore `docs/geometry_screenshots/` for images of the simulated geometry, setup boundaries, and mesh details that document your simulation configuration.  
+   - **Animations:**  
+     - For dynamic field visualizations, access `docs/animation/` where you’ll find exported animations (such as evolving electric/magnetic fields) illustrating how the filter behaves under excitation across the frequency range.

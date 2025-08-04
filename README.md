@@ -3,25 +3,23 @@
 ## Repository Structure
 
 ```
-microstrip-hpf-hfss/
+Microstrip-High-Pass-Filter-Simulation/
 ├── .gitignore
 ├── README.md
 ├── docs/
 │   ├── geometry_screenshots/
-│   │   ├── Microstrip-High-Pass-Model.jpg
-│   │   ├── HighPass-filter-Microstrip-Analysis-1.jpg
+│   │   ├── Microstrip_stricture.png
+│   │   ├── Microstrip_High_Pass_Model.JPG
 │   │   └── EF-field-effect.jpg
 │   └── animation/
 │       └── efield_animation.avi
 ├── hfss_project/
 │   ├── Microstrip_High_Pass_Filter_Divyam.aedt
-│   ├── Microstrip_High_Pass_Filter_Divyam.aedt.lock
-│   └── scripts/                # any supporting VBScript or Python
+│   ├── Microstrip_High_Pass_Filter_Divyam.aedt.lock            
 ├── results/
-│   ├── s_parameters.csv
-│   ├── s11_s22_plot.png
-│   └── s12_s21_plot.png
-└── LICENSE
+│   ├── HighPass_filter_Microstrip_Analysis.JPG
+│   ├── EF_field_effect.JPG
+
 ```
 
 ## README.md
@@ -74,7 +72,7 @@ In a well-matched high-pass filter, S21 and S12 overlap and rise above a thresho
   - Linear sweep from 1 GHz to 6 GHz (101 points)  
 - **Solution Setup**  
   - Driven-modal solver at 1.5 GHz, adaptive mesh with maximum ΔS = 0.02
-
+![Environment](docs/geometry_screenshots/Microstrip_High_Pass_Model.JPG)
 ### Results and Observations
 - **S21 & S12 Overlap**  
   - Demonstrates symmetric, reciprocal filter response  
@@ -82,7 +80,7 @@ In a well-matched high-pass filter, S21 and S12 overlap and rise above a thresho
   - Sharp cutoff near **1.5 GHz**, matching theory  
 - **Low S11 & S22 in Passband**  
   - Indicates good impedance match and minimal reflection  
-
+![Results](results/HighPass_filter_Microstrip_Analysis.JPG)
 | Parameter | Observation                               |
 |-----------|-------------------------------------------|
 | Cutoff    | ~1.5 GHz                                  |

@@ -11,7 +11,8 @@ Microstrip-High-Pass-Filter-Simulation/
 │   │   ├── Microstrip_stricture.png
 │   │   ├── Microstrip_High_Pass_Model.JPG
 │   └── animation/
-│       └── efield_animation.avi
+│       ├──  efield_animation.avi
+│       ├── EField_Animaion.gif
 ├── hfss_project/
 │   ├── Microstrip_High_Pass_Filter_Divyam.aedt
 │   ├── Microstrip_High_Pass_Filter_Divyam.aedt.lock            
@@ -92,6 +93,7 @@ These results validate the design and simulation, demonstrating that the filter 
 ### E-Field Animation
 An animation of the E-field distribution at 1.5 GHz illustrates field confinement and stub resonance.  
 `docs/animation/efield_animation.avi`
+![Electric Field Animation](docs/animation/EField_Animaion.gif)
 
 
 ## Getting Started

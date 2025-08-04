@@ -22,8 +22,6 @@ Microstrip-High-Pass-Filter-Simulation/
 
 ```
 
-## README.md
-
 # Microstrip High-Pass Filter Simulation
 
 ### Introduction to Microstrip
@@ -72,6 +70,7 @@ In a well-matched high-pass filter, S21 and S12 overlap and rise above a thresho
   - Linear sweep from 1 GHz to 6 GHz (101 points)  
 - **Solution Setup**  
   - Driven-modal solver at 1.5 GHz, adaptive mesh with maximum ΔS = 0.02
+
 ![Environment](docs/geometry_screenshots/Microstrip_High_Pass_Model.JPG)
 ### Results and Observations
 - **S21 & S12 Overlap**  
@@ -80,7 +79,9 @@ In a well-matched high-pass filter, S21 and S12 overlap and rise above a thresho
   - Sharp cutoff near **1.5 GHz**, matching theory  
 - **Low S11 & S22 in Passband**  
   - Indicates good impedance match and minimal reflection  
+
 ![Results](results/HighPass_filter_Microstrip_Analysis.JPG)
+
 | Parameter | Observation                               |
 |-----------|-------------------------------------------|
 | Cutoff    | ~1.5 GHz                                  |
